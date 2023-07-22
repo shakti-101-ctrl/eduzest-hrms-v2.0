@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "F5rcbH5HzbWth6Rz6xBR5J7ApZHOV+r2FjGa63kYxTk60cIvEci8eANLJIIRU4DA1+FjV4cpnAx9i9s9psaH+A==",
+  "success": true,
+  "projectFilePath": "C:\\projects\\HRMS_Eduzest\\eduzest-hrms-web-api-master\\Eduzest.HRMS.Entities\\Eduzest.HRMS.Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Shakti\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.20\\microsoft.windowsdesktop.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\Shakti\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.20\\microsoft.netcore.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\Shakti\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.20\\microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}
