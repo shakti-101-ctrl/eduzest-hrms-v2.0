@@ -42,8 +42,6 @@ namespace Eduzest.HRMS.Repository.Service
             }
             else
             {
-               
-               
                 loginResponse.Token = null;
                 return loginResponse;
             }

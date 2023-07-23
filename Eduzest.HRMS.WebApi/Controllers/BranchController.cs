@@ -36,7 +36,7 @@ namespace Eduzest.HRMS.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ServiceResponse<Branch>() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError });
+                return Ok(new ServiceResponse<Branch>() { Message = MessaageType.FailureOnException, Response =(int)ResponseType.InternalServerError });
             }         
 
         }
@@ -51,7 +51,7 @@ namespace Eduzest.HRMS.WebApi.Controllers
             }
             else
             {
-                return BadRequest();
+                return Ok(new ServiceResponse<Branch>() { Message=MessaageType.UnAuthenticatedRequest, Response =(int)ResponseType.UnAuthenticatedAccess, Success = false });
             }
         }
         [HttpPost("postbranch")]
@@ -70,14 +70,14 @@ namespace Eduzest.HRMS.WebApi.Controllers
                 }
                 else
                 {
-                    return Ok(new ServiceResponse<Branch>() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError, Success = false });
-                   
+                    return Ok(new ServiceResponse<Branch>() { Message = MessaageType.UnAuthenticatedRequest, Response = (int)ResponseType.UnAuthenticatedAccess, Success = false });
+
                 }
 
             }
             catch(Exception ex)
             {
-                return BadRequest(new ServiceResponse<Branch>() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError });
+                return Ok(new ServiceResponse<Branch>() { Message = MessaageType.FailureOnException, Response = (int)ResponseType.InternalServerError });
             }
                
         }
@@ -106,19 +106,19 @@ namespace Eduzest.HRMS.WebApi.Controllers
                     }
                     else
                     {
-                        return BadRequest(new ServiceResponse<Branch>() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError });
+                        return Ok(new ServiceResponse<Branch>() { Message = MessaageType.UnAuthenticatedRequest, Response = (int)ResponseType.UnAuthenticatedAccess, Success = false });
                     }
                    
                 }
                 else
                 {
-                    return BadRequest(new ServiceResponse<Branch>() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError });
+                    return Ok(new ServiceResponse<Branch>() { Message = MessaageType.UnAuthenticatedRequest, Response = (int)ResponseType.UnAuthenticatedAccess, Success = false });
                 }
 
             }
             catch (Exception ex)
             {
-                return BadRequest(new ServiceResponse<Branch>() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError });
+                return Ok(new ServiceResponse<Branch>() { Message = MessaageType.FailureOnException, Response = (int)ResponseType.InternalServerError });
             }    
         }
         [HttpDelete("deletebranch/{id}")]
@@ -137,12 +137,12 @@ namespace Eduzest.HRMS.WebApi.Controllers
                 }
                 else
                 {
-                    return BadRequest(new ExceptionResponse() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError });
+                    return Ok(new ServiceResponse<Branch>() { Message = MessaageType.UnAuthenticatedRequest, Response = (int)ResponseType.UnAuthenticatedAccess, Success = false });
                 }
             }
             catch(Exception ex)
             {
-                return BadRequest(new ExceptionResponse() { Message = MsgType.FailureOnException, Response = (int)ResType.InternalServerError });
+                return Ok(new ServiceResponse<Branch>() { Message = MessaageType.FailureOnException, Response = (int)ResponseType.InternalServerError });
             }
 
         }

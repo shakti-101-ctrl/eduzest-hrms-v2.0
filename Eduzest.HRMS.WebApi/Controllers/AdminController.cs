@@ -29,12 +29,23 @@ namespace Eduzest.HRMS.WebApi.Controllers
         [Route("adminregistration")]
         public async Task<IActionResult> AdminRegistration(RegistrationDto registrationDto)
         {
-            LoginResponse loginResponse = new LoginResponse();
-            registrationDto.CreatedOn = DateTime.Now;
-            var result = await _unitOfWork.Admin.Add(_mapper.Map<Registration>(registrationDto));
-            _unitOfWork.Complete();
-            _unitOfWork.Dispose();
-            return Ok(result);
+           ServiceResponse<Registration> serviceResponse = new ServiceResponse<Registration>();
+           try
+            {
+                registrationDto.CreatedOn = DateTime.Now;
+                var result = await _unitOfWork.Admin.Add(_mapper.Map<Registration>(registrationDto));
+                _unitOfWork.Complete();
+                _unitOfWork.Dispose();
+                return Ok(result);
+            }
+            catch (Exception ex) 
+            {
+                serviceResponse.Message = MessaageType.FailureOnException;
+                serviceResponse.Success = false;
+                serviceResponse.Response = (int)ResponseType.InternalServerError;
+            }
+            return Ok(serviceResponse);
+          
         }
         [HttpPost]
         [Route("adminlogin")]
